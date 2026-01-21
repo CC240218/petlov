@@ -6,7 +6,7 @@ describe('Página Inicial - Conectando corações, mudando vidas!', () => {
   });
 
   it('Deve validar o título', () => {
-    cy.get('h1').should('have.text', 'Conectando corações, mudando vidas!');
+    cy.get('h1').should('have.text', 'Conectando corações, mudando vidas');
   });
 
   it('Deve validar o subtítulo', () => {
