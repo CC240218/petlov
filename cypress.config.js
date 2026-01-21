@@ -1,4 +1,5 @@
 module.exports = {
+  projectId: "vpkiip",
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
