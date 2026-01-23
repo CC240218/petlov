@@ -4,8 +4,16 @@ on:
     inputs:
       spec:
         default: cypress/e2e/*
+      browser:
+        description: Select browser to run
+        type: choice
+        default: all
+        options:
+          - chrome
+          - firefox
 jobs:
   firefox-tests:
+    if: ${{ github.event.inputs.browser == 'all' || github.event.inputs.browser == 'firefox' }}
     runs-on: ubuntu-latest
     container:
         image: cypress/browsers:22.16.0
@@ -43,6 +51,7 @@ jobs:
           # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   chrome-tests:
+    if: ${{ github.event.inputs.browser == 'all' || github.event.inputs.browser == 'chrome' }}
     runs-on: ubuntu-latest
     container:
         image: cypress/browsers:22.16.0
