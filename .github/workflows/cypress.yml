@@ -9,7 +9,7 @@ on:
         type: choice
         default: all
         options:
-          -
+          - all
           - chrome
           - firefox
 jobs:
