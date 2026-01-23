@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run e2e tests
+      - name: Run e2e tests (Firefox)
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6
         with:
@@ -30,6 +30,7 @@ jobs:
           install-command: npm install
           wait-on: 'https://petlov.vercel.app' # Waits for above
           browser: firefox
+          group: Firefox
           # Records to Cypress Cloud 
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
           record: true
@@ -57,7 +58,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run e2e tests
+      - name: Run e2e tests (Google Chrome)
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6
         with:
@@ -66,6 +67,7 @@ jobs:
           install-command: npm install
           wait-on: 'https://petlov.vercel.app' # Waits for above
           browser: chrome
+          group: Chrome
           # Records to Cypress Cloud 
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
           record: true
